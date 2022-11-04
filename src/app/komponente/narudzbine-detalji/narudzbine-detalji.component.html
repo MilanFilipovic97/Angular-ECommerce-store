@@ -1,0 +1,55 @@
+<h2 style ="text-align: center;">Detalji narudzbine</h2>
+
+<!--
+<h2>{{proizvodi[0].Naziv}}</h2>
+
+<img src="{{proizvodi[0].Slika}}" alt="Nema slike" class="slika">
+-->
+<div *ngIf = "porudzbine">
+    <p>Ime narucioca: {{porudzbine[0].PrimalacIme}}<p>
+    <p>Prezime narucioca: {{porudzbine[0].PrimalacPrezime}}<p>
+    <p>Grad: {{porudzbine[0].Grad}}<p>
+    <p>Adresa: {{porudzbine[0].Adresa}}<p>
+    <p>e-mail: {{porudzbine[0].mail}}<p>
+    <p>Kontakt: {{porudzbine[0].Kontakt}}<p>
+    
+        <p>Status: </p>
+        <select [(ngModel)] = "porudzbine[0].Status" >
+            <option>Aktivna</option>
+            <option>Na cekanju</option>
+            <option>U obradi</option>
+            <option>Izvrsena</option>
+        </select>
+
+    <button (click) = "izmeniStatusNarudzbine()" class = "detaljnije">Izmeni</button>
+    <h2>Artikli</h2>
+    
+    <table id="porudzbine">
+        <tr>
+            <th>Naziv</th>
+            <th>Kolicina</th>
+            <th>Cena</th>
+            <th>Vrednost</th>
+        </tr>
+        <tr *ngFor="let artikal of artikli">
+            <td>
+                <p>{{artikal.Naziv}}</p>
+            </td>
+            <td>
+                <p>{{artikal.Kolicina}}</p>
+            </td>
+            <td>
+                <p>{{artikal.Cena}}</p>
+            </td>
+            <td>
+                <p>{{artikal.Kolicina * artikal.Cena}}</p>
+            </td>
+                
+        </tr>
+    
+    </table>
+
+    <h4>Ukupna vrednost: {{ukupnaVrednost()}} </h4>
+
+
+</div>

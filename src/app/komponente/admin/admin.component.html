@@ -1,0 +1,146 @@
+
+<div >
+    <div style=" width:100%; align-self: center; ">
+        <br><br>
+<button style = "margin-left: 10px;" class = "dugme" (click)="prikazPorudzbinaFL()" >Porudzbine fizickih lica</button>
+<button style = "margin-left: 15px;" class = "dugme" (click)="prikazPorudzbinaPL()" >Porudzbine pravnih lica</button>
+<!-- <br>-->
+<button style = "margin-left: 15px;" class = "dugme" (click)="prikazProizvoda()" >Proizvodi</button>
+<!--
+<button style = "margin-left: 10px;" class = "dugme" (click)="prikazKorisnika()" >Korisnicni</button>
+-->
+</div>
+
+<div style = "width: 100%;">
+<h1 *ngIf = "prikazPorudzFL" >Pregled porudzbina od fizickih lica</h1>
+<h1 *ngIf = "prikazPorudzPL" >Pregled porudzbina od pravnih lica</h1>
+<h1 *ngIf = "prikazProiz" >Kreiranje novog proizvoda</h1> <!--
+<h1 *ngIf = "prikazKor" >Pregled korisnika</h1>-->
+
+<div *ngIf = "prikazPorudzFL">
+
+    
+    
+    <table id="porudzbine">
+        <tr>
+            <th>Broj porudzbine</th>
+            <th>Ime primaoca</th>
+            <th>Prezime primaoca</th>
+            <th>Grad primaoca</th>
+            <th>Status</th>
+            <th>Akcija</th>
+        </tr>
+        <tr *ngFor="let porudzbina of porudzbine">
+            <td>
+                <p>{{porudzbina.ID}}</p>
+            </td>
+            <td>
+                <p>{{porudzbina.PrimalacIme}}</p>
+            </td>
+            <td>
+                <p>{{porudzbina.PrimalacPrezime}}</p>
+            </td>
+            <td>
+                <p>{{porudzbina.Grad}}</p>
+            </td>
+            <td>
+                <p>{{porudzbina.Status}}</p>
+            </td>
+            <td>
+                <button (click) = "onSelect(porudzbina)" [class.selected]="porudzbina === selectedPorudzbina" class = "detaljnije">Detaljnije</button>
+            </td>
+    
+        </tr>
+    
+    </table>
+
+</div>
+
+<!--ovde je tabela za porudzbine pravnih lica-->
+<div *ngIf = "prikazPorudzPL">
+
+    
+    
+    <table id="porudzbine">
+        <tr>
+            <th>Broj porudzbine</th>
+            <th>Naziv firme</th>
+            <th>Sediste</th>
+            <th>Pib</th>
+            <th>Status</th>
+            <th>Akcija</th>
+        </tr>
+        <tr *ngFor="let porudzbinaPL of porudzbinePL">
+            <td>
+                <p>{{porudzbinaPL.ID}}</p>
+            </td>
+            <td>
+                <p>{{porudzbinaPL.Naziv}}</p>
+            </td>
+            <td>
+                <p>{{porudzbinaPL.Sediste}}</p>
+            </td>
+            <td>
+                <p>{{porudzbinaPL.Pib}}</p>
+            </td>
+            <td>
+                <p>{{porudzbinaPL.Status}}</p>
+            </td>
+            <td>
+                <button (click) = "onSelectPL(porudzbinaPL)" [class.selected]="porudzbinaPL === selectedPorudzbinaPL" class = "detaljnije">Detaljnije</button>
+            </td>
+    
+        </tr>
+    
+    </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!--Prikaz proizvoda testiram upload-->
+
+<div *ngIf = "prikazProiz" >
+  
+   <label>Prilozi sliku </label>
+    <input   #imageInput type="File" name="file">
+    
+    <br><br>
+    <label>Naziv proizvoda </label>
+    <input type="text" [(ngModel)] = "proizvod.Naziv">
+    <br>
+    <label>Izaberite proizvodjaca: </label>
+    <select [(ngModel)] = "proizvod.Proizvodjac">
+        <option>Microsoft</option>
+        <option>Adobe</option>
+        <option>Huawei</option>
+        <option>Ubisoft</option>
+        <option>IBM</option>
+     </select>
+     <br>
+     <label>Opis proizvoda: </label>
+     <br>
+     <textarea  rows="10" cols="25" [(ngModel)] = "proizvod.Opis" ></textarea>
+     <br>
+     <label>Zalihe: </label>
+    <select [(ngModel)] = "proizvod.Stanje">
+        <option>Na stanju</option>
+        <option>Nema na stanju</option>
+     </select>
+     <br>
+     <label>Cena: </label>
+     <input type="number" [(ngModel)] = "proizvod.Cena">
+     <br>
+     <button class="sacuvaj" (click) = "kreirajProizvod(imageInput)" style = "background-color: rgb(51, 102, 255)">Sacuvaj</button>
+</div>
+
+
+
+</div>
+

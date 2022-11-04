@@ -1,0 +1,16 @@
+<h2 style = "text-align: center;">Prijavi se</h2>
+
+
+<div>
+    
+      <label >Korisnicko ime </label> <br>
+      <input type="text"   placeholder="Unesite korisnicko ime.."  [(ngModel)] = "korisnik.Korisnicko_ime">
+    <br>
+      <label >Lozinka </label> <br>
+      <input type="password"  placeholder="Unesite lozinku.." [(ngModel)] = "korisnik.Lozinka">
+    <br>
+      
+      <button class = "naruci" (click) = "ulogujSe()" style = "background-color: rgb(51, 102, 255)"   >Prijavi se </button>
+     
+      <p>Niste registrovani ? <a href="https://elektronsko-f8680.web.app/registracija">Registrujte se!</a> </p> 
+  </div>

@@ -1,0 +1,81 @@
+.dugme{
+      width:30%;
+      background-color: rgb(51, 102, 255);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      min-width: 150px;
+
+  }
+    
+    .naruci:hover {
+      background-color: rgb(51, 102, 255);
+    }
+
+
+#porudzbine {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#porudzbine td, #porudzbine th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#porudzbine tr:nth-child(even){background-color: #f2f2f2;}
+
+#porudzbine tr:hover {background-color: #ddd;}
+
+#porudzbine th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(51, 119, 255);
+  color: white;
+}
+
+.sacuvaj{
+  background-color: #6666ff; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  
+}
+input[type=text] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  min-width: 150px;
+}
+input[type=number] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  min-width: 150px;
+}
+
+
+.detaljnije{
+  //width:30%;
+  background-color: rgb(51, 102, 255);
+  color: white;
+  //padding: 14px 20px;
+  //margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+<h3>Podaci o korisniku</h3>
+<!--ovde cu da stavim podatke klasicno
+i ispod na dugme nek prikaze porudzbine gde je njegovo ime prezime, grad i adresa
+-->
+<div *ngIf = "korisnik">
+<p>Ime: {{korisnik.Ime}}</p>
+<p>Prezime: {{korisnik.Prezime}}</p>
+<p>Grad: {{korisnik.Grad}}</p>
+<p>Adresa: {{korisnik.Adresa}}</p>
+<p>e-mail: {{korisnik.mail}}</p>
+
+<label>Unesi broj porudzbine: </label>
+<input type="number" [(ngModel)] = "idNarudzbine">
+<br>
+<button class="dugme" (click)="prikaziPorudzbine()" style = "background-color: rgb(51, 102, 255)">Proveri porudzbinu</button>
+    <div *ngIf="porudzbinePrikaz">
+       <h3>Status: {{status}}</h3>
+    </div>
+</div>

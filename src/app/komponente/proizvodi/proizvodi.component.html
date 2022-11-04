@@ -1,0 +1,62 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>Proizvodi</h1>
+
+<div>
+
+    <select (change)="sortiraj()" [(ngModel)]="sortBy">
+        <option>Sortiranje...</option>
+        <option>Cena rastuce</option>
+        <option>Cena opadajuce</option>
+     </select>
+     <br><br>
+
+     <button class = "naruci" style = "background-color: rgb(51, 102, 255)" (click)="prikaziFilter()" >Filter</button>
+     
+     <div  *ngIf = "filterPrikaz">      <!--Filter-->
+        <hr>
+        <label style="margin-right: 10px;">Proizvodjac</label>
+        <select [(ngModel)]="proizvodjac">
+            <option>Svi</option>
+            <option>Microsoft</option>
+            <option>Adobe</option>
+            <option>Huawei</option>
+            <option>Ubisoft</option>
+            <option>IBM</option>
+        </select>
+
+        <label style = "margin-right: 10px; margin-left: 10px;">Stanje</label>
+        <select [(ngModel)]="stanje">
+            <option>Na stanju</option>
+            <option>Nema na stanju</option>
+        </select>
+        <label style="margin-left: 10px; margin-right: 10px;" >Cena od</label>
+        <input style="text-align: right;" type="number" [(ngModel)] = "cenaODFilter">
+        <label style = "margin-left: 10px;" style="margin-left: 10px; margin-right: 10px;">Cena do</label>
+        <input style="text-align: right;" type="number" [(ngModel)] = "cenaDOFilter">
+        <button class = "naruci" style = "background-color: rgb(51, 102, 255)" (click)="izvrsiFilter()" style="margin-left: 10px;">Prikazi</button>
+        <button class = "naruci" style = "background-color: rgb(51, 102, 255)" (click) = "ponistiFilter()" style="margin-left: 10px;">Ponisti filter</button>
+        <hr> 
+    </div>
+
+
+     <div style="align-content: center;">
+    
+        <div *ngFor = "let proizvod of proizvodi" class="card" >
+            
+            <h3>{{ proizvod.Naziv }}</h3>
+            
+            
+            <p class="price">Cena: {{proizvod.Cena}} RSD </p>
+            <img src="{{proizvod.Slika}}" alt="Nema slike" class="slika" width="500" height="200">
+            
+           
+            <button (click) = "onSelect(proizvod)" [class.selected]="proizvod === selectedProizvod" style = "background-color: rgb(51, 102, 255)">Detaljnije</button>
+
+            
+            <button (click) = "dodajUKorpu(proizvod)" [disabled]="proizvod.Stanje == nema">Dodaj u korpu</button>  <!--(click)="addToCart($event, product)-->
+          </div>
+        
+      
+    </div>
+     
+</div>

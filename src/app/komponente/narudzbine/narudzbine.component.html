@@ -1,0 +1,55 @@
+<h2>Narudzbina</h2>
+
+
+<div *ngIf = "!pravnoLice">
+    
+      <label >Ime</label>
+      <input  type="text"   placeholder="Unesite svoje ime.." [(ngModel)]="korisnik.Ime" >
+  
+      <label>Prezime</label>
+      <input type="text"  placeholder="Unesite svoje prezime.." [(ngModel)]="korisnik.Prezime">
+  
+      <label>Grad</label>
+      <input  type="text"  placeholder="Unesite grad.." [(ngModel)]="korisnik.Grad" >
+
+      <label>Adresa</label>
+      <input  type="text"  placeholder="Unesite adresu.." [(ngModel)]="korisnik.Adresa">
+
+      <label>e-mail</label>
+      <input  type="text"  placeholder="Unesite e mail.." [(ngModel)]="korisnik.mail" >
+
+      <label  >Kontakt tel</label>
+      <input type="number"  placeholder="Unesite kontakt tel.." [(ngModel)]="kontaktTel" >
+      
+      <br>
+      
+      <button  class = "dugme" (click)="prikaziStavkePravnoLice()"  style = "background-color: rgb(51, 102, 255)">Pravno lice</button>
+      <h5>Ukoliko ste pravno lice imate pravo na popust u iznosu od 20%.</h5>
+      <button class = "naruci" (click)="naruciFL()" style = "background-color: rgb(51, 102, 255)">Naruci</button>
+</div>  
+
+<div *ngIf = "pravnoLice">
+      <button  class = "dugme" (click)="prikaziStavkePravnoLice()" style = "background-color: rgb(51, 102, 255)">Fizicko lice</button>
+    <br><br>
+    <div *ngIf="true">
+      <label >Naziv firme</label>
+      <input  type="text"  placeholder="Unesi naziv firme.." [(ngModel)] = "pravnoLicePodaci.Naziv">
+      <label >Sediste firme</label>
+      <input  type="text"  placeholder="Unesi sediste firme.." [(ngModel)] = "pravnoLicePodaci.Sediste" >
+      <label >Adresa firme</label>
+      <input  type="text"  placeholder="Unesi adresu firme.." [(ngModel)] = "pravnoLicePodaci.Adresa">
+      <label >Pib firme</label>
+      <input  type="number"  placeholder="Unesi pib firme.." [(ngModel)] = "pravnoLicePodaci.Pib" >
+      <label >Maticni broj firme</label>
+      <input  type="number"  placeholder="Unesi maticni broj firme.." [(ngModel)] = "pravnoLicePodaci.Maticni">
+      
+
+      <h5>Kako bi ostvarili popust u iznosu od 20% potrebno je priloziti resenje iz APR.</h5>
+      <label>Prilozi dokument: </label>
+      <input   #fileInput type="File" name="file">
+
+      <br><br>
+      <button class = "naruci" (click)="naruciPL(fileInput)"  style = "background-color: rgb(51, 102, 255)">Naruci</button> 
+</div>
+  </div>
+  

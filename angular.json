@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "elektronsko"
+    }
+  },
+  "defaultProject": "elektronsko",
+  "cli": {
+    "analytics": "d3ad01d6-547e-44a8-838e-7f8b7fea9283"
+  }
 }

@@ -1,0 +1,53 @@
+<h2 style ="text-align: center;">Detalji narudzbine pravnog lica</h2>
+
+
+<div *ngIf = "porudzbinePL">
+    <p>Naziv firme: {{porudzbinePL[0].Naziv}}</p>
+    <p>Sediste: {{porudzbinePL[0].Sediste}}</p>
+    <p>Adresa: {{porudzbinePL[0].Adresa}}</p>
+    <p>Pib: {{porudzbinePL[0].Pib}}</p>
+    <p>Maticni broj: {{porudzbinePL[0].Maticni}}</p>
+    <a href="https://mfsoft.co.rs/narudzbine/dokumenti/{{porudzbinePL[0].Dokument}}">Preuzmi prilozeni dokument</a>
+
+    <p>Status: </p>
+        <select [(ngModel)] = "porudzbinePL[0].Status" >
+            <option>Aktivna</option>
+            <option>Na cekanju</option>
+            <option>U obradi</option>
+            <option>Izvrsena</option>
+        </select>
+
+    <button (click) = "izmeniStatusNarudzbine()" class="detaljnije">Izmeni</button>
+    <h2>Artikli</h2>
+    
+    <table id="porudzbine">
+        <tr>
+            <th>Naziv</th>
+            <th>Kolicina</th>
+            <th>Cena</th>
+            <th>Vrednost</th>
+        </tr>
+        <tr *ngFor="let artikal of artikli">
+            <td>
+                <p>{{artikal.Naziv}}</p>
+            </td>
+            <td>
+                <p>{{artikal.Kolicina}}</p>
+            </td>
+            <td>
+                <p>{{artikal.Cena}}</p>
+            </td>
+            <td>
+                <p>{{artikal.Kolicina * artikal.Cena}}</p>
+            </td>
+                
+        </tr>
+    
+    </table>
+
+    <h6>Ukupna vrednost: {{ukupnaVrednost()}} </h6>
+    <h6>Ostvareni popust: - 20%</h6>
+    <hr>
+    <h6>Za uplatu {{ukupnaVrednost() *0.8}}</h6>
+
+</div>

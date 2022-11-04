@@ -1,0 +1,36 @@
+#porudzbine {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #porudzbine td, #porudzbine th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #porudzbine tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #porudzbine tr:hover {background-color: #ddd;}
+  
+  #porudzbine th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(51, 119, 255);
+    color: white;
+  }
+  
+
+  .detaljnije{
+    //width:30%;
+    background-color: rgb(51, 102, 255);
+    color: white;
+    padding: 7px 10px;
+    //margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+  }

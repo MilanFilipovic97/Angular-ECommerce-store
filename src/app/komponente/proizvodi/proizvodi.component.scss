@@ -1,0 +1,106 @@
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+
+
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+    transition: 0.3s;
+
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+
+  .slika{
+    //max-width: 278px; 
+    //max-height: 181px;
+    width: 100%;
+  }
+
+  .card button:disabled {
+    background: #dddddd;
+  }
+
+  .naruci{
+    //width: 40%;
+     // background-color: #4CAF50;
+     background-color: rgb(51, 102, 255);
+      color: white;
+     // padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      min-width: 150px;
+  }
+    
+    .naruci:hover {
+     // background-color: #45a049;
+     background-color: rgb(51, 103, 255);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+/* Float four columns side by side */ 
+
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .card {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }

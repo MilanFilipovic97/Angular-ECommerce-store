@@ -1,0 +1,42 @@
+<h1 style="text-align: center;">Korpa</h1>
+<table id="artikli">
+    <tr>
+        <th>Proizvod</th>
+        <th>Kolicina</th>
+        <th>Cena</th>
+        <th>Vrednost</th>
+        <th>Obrisi</th>
+    </tr>
+    <tr *ngFor="let korpaArtikal of korpa">
+        <td>
+            <p>{{korpaArtikal.Proizvod.Naziv}}</p>
+            
+        </td>
+        <td>
+            <button (click)="smanjiKolicinu(korpaArtikal.Proizvod, korpaArtikal.Kolicina)" >-</button> <!--smanjiKolicinu(korpaArtikal.Proizvod)"-->
+           <!-- <span class="ml-3 mr-3">{{cartItem.quantity}}</span>-->
+           <p>{{korpaArtikal.Kolicina}}</p>
+            <button (click)="povecajKolicinu(korpaArtikal.Proizvod, korpaArtikal.Kolicina)" >+</button> 
+        </td>
+        <td>
+            <p>{{korpaArtikal.Proizvod.Cena}}</p>
+        </td>
+        <td>
+            <p>{{korpaArtikal.Kolicina * korpaArtikal.Proizvod.Cena }}</p>
+        </td>
+        <td>
+            <button (click)="obrisiArtikal(korpaArtikal.Proizvod, korpaArtikal.Kolicina)">x</button> <!--(click)="obrisiIzKorpe(korpaArtikal.Proizvod)"-->
+         </td>
+    </tr>   
+    
+</table>
+
+<h2 style = "float: right;">Vrednost proizvoda: {{ukupnaVrednost()}}</h2>
+<button class="dugme" (click)="zavrsiKupovinu()">Naruci</button>  
+<br>
+<button class="dugme"  (click)="obrisiCeluKorpu()">Obrisi korpu</button>  
+
+<div *ngIf="errorMessage.length > 0" class = "upozorenje">
+    <br>
+<span class="praznaKorpa">{{errorMessage}}</span>
+</div>

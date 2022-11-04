@@ -1,0 +1,32 @@
+.dugme {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: rgb(51, 102, 255);
+    text-align: center;
+    cursor: pointer;
+    width: 20%;
+    font-size: 18px;
+    min-width: 100px;
+  }
+
+  
+input[type=text] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  min-width:150px;
+}
+input[type=number] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  min-width:150px;
+}
+
+.dugme:disabled {
+  background: #dddddd;
+}

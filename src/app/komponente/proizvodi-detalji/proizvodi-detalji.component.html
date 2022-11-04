@@ -1,0 +1,53 @@
+<h2 style ="text-align: center;">Detalji proizvoda</h2>
+
+<!--
+<h2>{{proizvodi[0].Naziv}}</h2>
+
+<img src="{{proizvodi[0].Slika}}" alt="Nema slike" class="slika">
+-->
+
+<h1 *ngIf = "proizvodi"> {{proizvodi[0].Naziv}}</h1>
+<div *ngIf = "proizvodi">
+    <div *ngIf = "!admin">
+    <img src="{{proizvodi[0].Slika}}" alt="Nema slike" width="auto"  height="200">
+    <p>Cena: {{proizvodi[0].Cena}} RSD</p>
+    <h3>Opis: {{proizvodi[0].Opis}}</h3>
+    
+    <p>{{proizvodi[0].Proizvodjac}}</p>
+    <h4>{{proizvodi[0].Stanje}}</h4>
+    <button  class="dugme"  (click) = "dodajUKorpu(proizvodi[0])" [disabled]="proizvodi[0].Stanje == nema">Dodaj u korpu</button>  <!--(click)="addToCart($event, product)-->
+    
+</div>
+    <div *ngIf = "admin">
+        <hr>
+        <h4>Izmena i brisanje proizvoda</h4>
+        <label>Naziv proizvoda </label>
+        <input  type="text"  placeholder="Unesi novi naziv proizvoda.." [(ngModel)] = "proizvodi[0].Naziv">
+        <br>
+        <label>Opis proizvoda </label>
+        <textarea rows="10" cols="25" [(ngModel)] = "proizvodi[0].Opis" ></textarea>
+   <!-- <input  type="text"  placeholder="Unesi novi opis proizvoda.." [(ngModel)] = "proizvodi[0].Opis"> -->
+        <br>
+        <label>Stanje proizvoda </label>
+        <select [(ngModel)] = "proizvodi[0].Stanje">
+            <option>Na stanju</option>
+            <option>Nema na stanju</option>
+         </select>
+         <br><br>
+        <label>Izaberite proizvodjaca: </label>
+        <select [(ngModel)] = "proizvodi[0].Proizvodjac">
+        <option>Microsoft</option>
+        <option>Adobe</option>
+        <option>Huawei</option>
+        <option>Ubisoft</option>
+        <option>IBM</option>
+     </select>
+     <br>
+     <label>Cena proizvoda </label>
+        <input  type="number"  placeholder="Unesi novu cenu proizvoda.." [(ngModel)] = "proizvodi[0].Cena">
+     <br>
+        <button style="margin-left: 10px;" class="dugme" (click) = "izmeniProizvod()">Izmeni</button>
+        <button class="dugme" style="margin-left: 10px;" (click) = "obrisiProizvod()">Obrisi</button>
+    </div>
+
+</div>

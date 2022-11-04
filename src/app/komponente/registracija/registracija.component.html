@@ -1,0 +1,32 @@
+<h2 style = "text-align: center;">Registuj se</h2>
+
+
+<div>
+    
+      <label >Ime </label> <br>
+      <input type="text"   placeholder="Unesite ime.." [(ngModel)] = "korisnik.Ime" >
+    <br>
+      <label >Prezime </label> <br>
+      <input type="text"  placeholder="Unesite prezime.." [(ngModel)] = "korisnik.Prezime">
+
+    <br>
+      <label >Grad </label> <br>
+      <input type="text"  placeholder="Unesite grad.." [(ngModel)] = "korisnik.Grad">
+
+    <br>
+      <label >Adresa </label> <br>
+      <input type="text"  placeholder="Unesite adresu.." [(ngModel)] = "korisnik.Adresa">
+    
+    <br>
+      <label >e-mail </label> <br>
+      <input type="text"  placeholder="Unesite e-mail.." [(ngModel)] = "korisnik.mail">
+    <br>
+      <label >Korisnicko ime </label> <br>
+      <input type="text"  placeholder="Unesite zeljeno korisncko ime.." [(ngModel)] = "korisnik.Korisnicko_ime">
+    <br>
+      <label >Lozinka </label> <br>
+      <input type="password"  placeholder="Unesite lozinku.." [(ngModel)] = "korisnik.Lozinka">
+        
+      <br>
+      <button class = "naruci" (click) = "registrujSe()" style = "background-color: rgb(51, 102, 255)"  >Registruj se </button>
+  </div>
